@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sd_projects_form_inherit" model="ir.ui.view">
+        <field name="name">sd_projects.projects.form.view.inherit</field>
+        <field name="model">sd_projects.projects</field>
+        <field name="inherit_id" ref="sd_projects.projects_form"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//field[@name='start_date']" position="after">-->
+            <xpath expr="//group" position="after">
+                <field name="record_editors" >
+                    <list>
+                        <field name="name"/>
+                    </list>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+
+    <menuitem
+        name="Projects"
+        id="projects_menu"
+        parent="configurations_root_menu"
+        action="sd_projects.project_window_action"
+    />
+</odoo>

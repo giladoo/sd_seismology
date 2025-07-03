@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="spots_list" model="ir.ui.view">
+        <field name="name">Spots</field>
+        <field name="model">sd_seismology.spots</field>
+            <field name="arch" type="xml">
+                <list >
+                    <header>
+                        <button name="create_kml" string=".kml" type="object" class="btn btn-primary"></button>
+                    </header>
+                    <field name="name"/>
+                    <field name="project_name"/>
+                    <field name="latitude"/>
+                    <field name="longitude"/>
+                    <field name="date_plane"/>
+                    <field name="state"/>
+                </list>
+            </field>
+    </record>
+
+    <record id="spots_form" model="ir.ui.view">
+        <field name="name">Spots</field>
+        <field name="model">sd_seismology.spots</field>
+            <field name="arch" type="xml">
+                <form >
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="project_name"/>
+                                <field name="latitude"/>
+                                <field name="longitude"/>
+                                <field name="date_plane"/>
+                                <field name="state"/>
+
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+    </record>
+
+    <record id="spots_search" model="ir.ui.view">
+        <field name="name">Spots</field>
+        <field name="model">sd_seismology.spots</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="project_name"/>
+                    <field name="latitude"/>
+                    <field name="longitude"/>
+                    <field name="date_plane"/>
+                    <field name="state"/>
+                    <filter name="projects" string="Projects" context="{'group_by': 'project_name'}"/>
+                </search>
+            </field>
+    </record>
+
+    <record id="spots_act_window" model="ir.actions.act_window">
+        <field name="name">Spots</field>
+        <field name="res_model">sd_seismology.spots</field>
+        <field name="view_mode">list,form</field>
+<!--        <field name="domain">[('project_name.record_editors', '=', uid),]</field>-->
+        <field name="context">{'search_default_projects': 1,}</field>
+    </record>
+
+    <menuitem
+        name="Seismology"
+        id="seismology_root_menu"
+        groups="sd_seismology.group_sd_seismology_users"
+        action="spots_act_window"/>
+
+    <menuitem
+        name="Configurations"
+        id="configurations_root_menu"
+        groups="sd_seismology.group_sd_seismology_admins"
+        sequence="100"
+        parent="seismology_root_menu"/>
+
+</odoo>
