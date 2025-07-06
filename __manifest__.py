@@ -26,8 +26,8 @@
         # 'views/sd_projects_views.xml',
         # 'views/remote_server_views.xml',
         # 'views/activities_views.xml',
-        'wizard/kml_wizard.xml',
         'views/views.xml',
+        'wizard/kml_wizard.xml',
     ],
     'assets': {
 
@@ -56,3 +56,8 @@
     'license': 'LGPL-3',
 
 }
+
+
+
+
+
