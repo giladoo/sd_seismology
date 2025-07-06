@@ -11,6 +11,9 @@
     'application': True,
     'version': '18.0.1.0.0',
     'depends': ['base', 'web', 'sd_projects'],
+    'external_dependencies': {
+        'python': ['jdatetimext', 'simplekml', 'polycircles']
+    },
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
@@ -23,7 +26,7 @@
         # 'views/sd_projects_views.xml',
         # 'views/remote_server_views.xml',
         # 'views/activities_views.xml',
-        # 'views/records_form.xml',
+        'wizard/kml_wizard.xml',
         'views/views.xml',
     ],
     'assets': {

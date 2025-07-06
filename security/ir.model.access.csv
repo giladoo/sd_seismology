@@ -2,4 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sd_seismology_spots_admins,sd_seismology.spots,model_sd_seismology_spots,sd_seismology.group_sd_seismology_admins,1,1,1,1
 access_sd_seismology_spots_operators,sd_seismology.spots,model_sd_seismology_spots,sd_seismology.group_sd_seismology_operators,1,1,1,0
 access_sd_seismology_spots_users,sd_seismology.spots,model_sd_seismology_spots,sd_seismology.group_sd_seismology_users,1,0,0,0
+access_sd_seismology_kml_wizard_users,sd_seismology.kml_wizard,model_sd_seismology_kml_wizard,sd_seismology.group_sd_seismology_users,1,1,1,1
 

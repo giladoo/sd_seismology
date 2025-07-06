@@ -7,14 +7,18 @@
             <field name="arch" type="xml">
                 <list >
                     <header>
-                        <button name="create_kml" string=".kml" type="object" class="btn btn-primary"></button>
+<!--                        <button name="create_kml" string=".kml" type="object" class="btn btn-primary"></button>-->
                     </header>
                     <field name="name"/>
                     <field name="project_name"/>
+                    <field name="line"/>
                     <field name="latitude"/>
                     <field name="longitude"/>
                     <field name="date_plane"/>
-                    <field name="state"/>
+                    <field name="state" widget="badge"
+                                decoration-danger="state == 'stop'"
+                                decoration-info="state == 'ongoing'"
+                                decoration-success="state == 'done'"/>
                 </list>
             </field>
     </record>
@@ -24,19 +28,20 @@
         <field name="model">sd_seismology.spots</field>
             <field name="arch" type="xml">
                 <form >
+                    <header>
+                        <field name="state" widget="statusbar" />
+                    </header>
                     <sheet>
                         <group>
                             <group>
                                 <field name="name"/>
                                 <field name="project_name"/>
+                                <field name="line"/>
                                 <field name="latitude"/>
                                 <field name="longitude"/>
                                 <field name="date_plane"/>
-                                <field name="state"/>
-
                             </group>
                         </group>
-
                     </sheet>
                 </form>
             </field>
@@ -54,6 +59,7 @@
                     <field name="date_plane"/>
                     <field name="state"/>
                     <filter name="projects" string="Projects" context="{'group_by': 'project_name'}"/>
+                    <filter name="states" string="States" context="{'group_by': 'state'}"/>
                 </search>
             </field>
     </record>
@@ -63,7 +69,7 @@
         <field name="res_model">sd_seismology.spots</field>
         <field name="view_mode">list,form</field>
 <!--        <field name="domain">[('project_name.record_editors', '=', uid),]</field>-->
-        <field name="context">{'search_default_projects': 1,}</field>
+        <field name="context">{'search_default_projects': 1, 'search_default_states': 1,}</field>
     </record>
 
     <menuitem
@@ -76,6 +82,12 @@
         name="Configurations"
         id="configurations_root_menu"
         groups="sd_seismology.group_sd_seismology_admins"
+        sequence="100"
+        parent="seismology_root_menu"/>
+
+    <menuitem
+        name="Reports"
+        id="report_menu"
         sequence="100"
         parent="seismology_root_menu"/>
 
