@@ -6,7 +6,6 @@ import simplekml
 from io import BytesIO
 import base64
 from polycircles import polycircles
-from .colors import ColorList, COLOR_INDEX
 
 class SdHrPanel(models.TransientModel):
     _name = 'sd_seismology.kml_wizard'
