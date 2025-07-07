@@ -72,9 +72,22 @@
         <field name="context">{'search_default_projects': 1, 'search_default_states': 1,}</field>
     </record>
 
+    <record id="seismology_panel" model="ir.actions.client">
+        <field name="name">Seismology Main Panel</field>
+<!--        <field name="res_model">sd_seismology.records</field>-->
+        <field name="tag">sd_seismology.main_panel</field>
+    </record>
+
     <menuitem
         name="Seismology"
         id="seismology_root_menu"
+        groups="sd_seismology.group_sd_seismology_users"
+        action="seismology_panel"/>
+
+    <menuitem
+        name="Spots"
+        id="spots_menu"
+        parent="seismology_root_menu"
         groups="sd_seismology.group_sd_seismology_users"
         action="spots_act_window"/>
 

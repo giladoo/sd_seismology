@@ -35,10 +35,10 @@
 
         ],
         'web.assets_backend': [
-            # 'sd_hse/static/src/css/style.scss',
-            # 'sd_hse/static/src/components/web/**/*',
-            # 'sd_hse/static/src/js/**/*.js',
-            # 'sd_hse/static/src/js/**/*.css',
+            # 'sd_seismology/static/src/css/style.scss',
+            'sd_seismology/static/src/components/web/**/*',
+            'sd_seismology/static/src/js/**/*.js',
+            'sd_seismology/static/src/js/**/*.css',
         ],
         'web.report_assets_common': [
         ],

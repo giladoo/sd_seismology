@@ -1,0 +1,14 @@
+.anomaly_pie_chart1 {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: conic-gradient(#ffa38f 0% 40%, #8bc34a 40% 100% );
+
+        }
+
+.anomaly_pie_chart {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+
+        }
